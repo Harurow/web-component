@@ -1,0 +1,218 @@
+<html style="height: 100%;">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="copyright" content="(c) 2022 Harurow">
+  <meta name="google" content="notranslate">
+  <title name="app_title">Web Component Labo</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="components/extendCustomProperties.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <style>
+    .primary-div {
+      color: var(--primary-contrast);
+      background-color: var(--primary);
+    }
+    .primary-light-div {
+      color: var(--primary-light-contrast);
+      background-color: var(--primary-light);
+    }
+    .primary-dark-div {
+      color: var(--primary-dark-contrast);
+      background-color: var(--primary-dark);
+    }
+    .secondary-div {
+      color: var(--secondary-contrast);
+      background-color: var(--secondary);
+    }
+    .secondary-light-div {
+      color: var(--secondary-light-contrast);
+      background-color: var(--secondary-light);
+    }
+    .secondary-dark-div {
+      color: var(--secondary-dark-contrast);
+      background-color: var(--secondary-dark);
+    }
+    .primary-i-div {
+      color: var(--primary);
+      background-color: var(--primary-contrast);
+    }
+    .primary-light-i-div {
+      color: var(--primary-light);
+      background-color: var(--primary-light-contrast);
+    }
+    .primary-dark-i-div {
+      color: var(--primary-dark);
+      background-color: var(--primary-dark-contrast);
+    }
+    .secondary-i-div {
+      color: var(--secondary);
+      background-color: var(--secondary-contrast);
+    }
+    .secondary-light-i-div {
+      color: var(--secondary-light);
+      background-color: var(--secondary-light-contrast);
+    }
+    .secondary-dark-i-div {
+      color: var(--secondary-dark);
+      background-color: var(--secondary-dark-contrast);
+    }
+
+    div {
+      display: block;
+      padding: .3em;
+      margin: 1px;
+      position: relative;
+      min-height: 3em;
+      word-break: break-all;
+      border: 1px dotted #f0fa;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      border: 1px dotted #f50a;
+      /* background-color: #dd00cc33;*/
+    }
+
+    span {
+      text-align: center;
+      vertical-align: top;
+      border: 1px dotted #0afa;
+      margin: 1px;
+      padding: 10px;
+    }
+
+    p.va-top * {
+      vertical-align: top;
+    }
+
+    p.va-middle * {
+      vertical-align: middle;
+    }
+
+    p.va-baseline * {
+      vertical-align: baseline;
+    }
+
+    p.va-bottom * {
+      vertical-align: bottom;
+    }
+    .grid {
+      display: grid;
+      padding: 0;
+      margin: 0;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  </style>
+
+  <div class="grid" style="word-break: break-all;">
+    <div class="primary-light-i-div">
+      <p>
+        primary-light-invert <my-switch></my-switch>.
+      </p>
+    </div>
+    <div class="primary-light-div">
+      <p class="va-top">
+        primary-light <my-switch></my-switch>top.
+      </p>
+    </div>
+    <div class="primary-div">
+      <p class="va-middle">
+        primary <my-switch></my-switch>middle.
+      </p>
+    </div>
+    <div class="primary-i-div">
+      <p class="va-baseline">
+        primary-invert <my-switch></my-switch>baseline.
+      </p>
+    </div>
+    <div class="primary-dark-div">
+      <p class="va-bottom">
+        primary-dark <my-switch></my-switch>bottom.
+      </p>
+    </div>
+
+    <div class="secondary-light-i-div">
+      <p>
+        secondary-light-invert <my-switch></my-switch>.
+      </p>
+    </div>
+    <div class="secondary-light-div">
+      <p class="va-top">
+        secondary-light with<my-switch></my-switch>top.
+      </p>
+    </div>
+    <div class="secondary-div">
+      <p class="va-middle">
+        secondary with<my-switch></my-switch>middle
+      </p>
+    </div>
+    <div class="secondary-i-div">
+      <p class="va-baseline">
+        secondary-invert with<my-switch></my-switch>baseline
+      </p>
+    </div>
+    <div class="secondary-dark-div">
+      <p class="va-bottom">
+        secondary-dark with<my-switch></my-switch>bottom.
+      </p>
+    </div>
+  </div>
+
+  <div class="P-div" style="width: 100%; height: auto;">
+    <p style="font-size: 3em; vertical-align: middle;">
+      <span>
+        this is <input type="checkbox"></input> check-box.<br/>
+      </span>
+      <span>
+        this is <my-switch></my-switch> switch.<br/>
+      </span>
+      <span>
+        this is<my-switch checked></my-switch>checked switch.<br/>
+      </span>
+      <span>
+        this is<my-switch indeterminate></my-switch>indeterminate switch.<br/>
+      </span>
+      <span>
+        this is<my-switch disabled></my-switch>disabled switch.<br/>
+      </span>
+      <span>
+        this is<my-switch checked disabled></my-switch>checked disabled switch.<br/>
+      </span>
+      <span>
+        this is<my-switch indeterminate disabled></my-switch>indeterminate disabled switch.<br/>
+      </span>
+      <span style="background-color: d00;">
+        <label for="switch-1">this is label</label>
+        <my-switch id="switch-1"></my-switch>.&nbsp;
+        <label for="switch-2">
+        >>>this is label <my-switch id="switch-2"></my-switch><<<<br/>
+        </label>
+      </span>
+      <span>
+        this is<my-switch value="switch"></my-switch> switch. event test.<br/>
+      </span>
+      <span>
+        this is<input type="checkbox" value="checkbox"></input> checkbox. event test.<br/>
+      </span>
+      <span id="value"></span>
+    </p>
+  </div>
+</body>
+<script src="components/switch/switch.js"></script>
+<script type"text/javascript">
+  $('my-switch,input[type=checkbox]').each((i, elm) => {
+    // elm.indeterminate = true
+    // elm.checked = true
+    // elm.disabled = true
+
+    elm.addEventListener('change', (e) => {
+      $('#value').text(e.target.value)
+    })
+  })
+</script>
+</html>

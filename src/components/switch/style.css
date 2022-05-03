@@ -1,0 +1,109 @@
+/*! (c) 2022 Harurow */
+
+#root {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  line-height: 1em;
+  height: 1em;
+  width: 1.8em;
+  text-align: start;
+  vertical-align: baseline;
+}
+
+#root.primary {
+  --x-slider-rgb: var(--primary-rgb);
+  --x-thumbs: var(--primary-light);
+}
+
+#root.secondary {
+  --x-slider-rgb: var(--secondary-rgb);
+  --x-thumbs: var(--secondary-light);
+}
+
+#switch {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  position: relative;
+  margin: 0 0;
+  width: 1.8em;
+  height: 1em;
+  padding: 0;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* チェックボックス本体は非表示 */
+#checkbox {
+  display: none;
+}
+
+#slider {
+  display: inline-block;
+  width: 1.3em;
+  height: .5em;
+  margin: .25em .25em;
+  padding: 0 0 0 0;
+  background-color: #cccc;
+  border-radius: 1em;
+  transition: all .1s 0s ease-out;
+}
+
+input:checked~#slider {
+  background: rgba(var(--x-slider-rgb), .8);
+}
+
+#thumbs {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 1px;
+  left: 0em;
+  margin: auto 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 100%;
+  background: #fff;
+  box-shadow: 0 .06em .12em .00em #0013;
+  transition: all .1s 0s ease-out;
+}
+
+input:indeterminate~#thumbs {
+  opacity: 0;
+}
+
+input:disabled~#thumbs {
+  box-shadow: 0 0 .03em .01em #0015;
+}
+
+input:checked~#thumbs {
+  background: var(--x-thumbs);
+}
+
+input:checked~#thumbs {
+  transform: translateX(.8em);
+}
+
+#effects {
+  position: absolute;
+  left: -.5em;
+  top: -.5em;
+  display: noneblock;
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  background: #ccc0;
+  transition: all .1s 0s ease-out;
+}
+
+input:checked~#effects {
+  display: inline-block;
+  left: .25em
+}
+
+input:hover:not(:disabled)~#effects {
+  background: #ccc4;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "web-component",
+  "version": "1.0.0",
+  "description": "WebComponentを使った実験",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "author": "Harurow",
+  "license": "MIT",
+  "devDependencies": {
+    "csscomb": "^4.3.0",
+    "eslint": "^8.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "stylelint": "^14.8.0",
+    "stylelint-config-standard": "^25.0.0"
+  }
+}
